@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script th:src="@{/js/waseda.js}"></script>
+<!-- <script th:src="@{/js/keio.js}"></script> -->
+<body>
+	
+	<form th:action="@{/insert}" method="post">
+	
+		<label><input type="checkbox" value="早稲田大学" id="waseda">早稲田大学</label>
+		<div id="parentM">
+				<!-- ここにinputが追加される -->
+		</div>
+		<input type="button" value="追加" id="addMon"><br>
+
+		<label><input type="checkbox" value="慶應大学" id="keio">慶應大学</label>
+			<div id="parentTue">
+				<!-- ここにinputが追加される -->
+			</div>
+		<input type="button" value="追加" id="addTue">
+
+		<input type="submit" value="送信" />
+
+	</form>
+
+</body>
+</html>

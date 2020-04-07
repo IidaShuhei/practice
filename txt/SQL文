@@ -1,0 +1,8 @@
+drop table if exists teachers cascade;
+
+create table teachers (
+id serial primary key,
+university text,
+name text,
+subject text
+);
