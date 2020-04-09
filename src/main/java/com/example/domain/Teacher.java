@@ -10,4 +10,5 @@ public class Teacher {
 	private String university;
 	private String name;
 	private String subject;
+	private String one;
 }

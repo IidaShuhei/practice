@@ -15,13 +15,13 @@ public class TeacherRepository {
 	private NamedParameterJdbcTemplate template;
 	
 	public void insert(Teacher teacher) {
-		String sql = "insert into teachers(university,name,subject)values(:university,:name,:subject)";
+		String sql = "insert into teachers(university,name,subject,one)values(:university,:name,:subject,:one)";
 		SqlParameterSource param = new BeanPropertySqlParameterSource(teacher);
 		template.update(sql, param);
 	}
 	
 	public void delete(Teacher teacher) {
-		String sql = "delete from teachers where university is null and name is null and subject is null";
+		String sql = "delete from teachers where university is null and name is null and subject is null and one is null";
 		SqlParameterSource param = new BeanPropertySqlParameterSource(teacher);
 		template.update(sql, param);
 	}

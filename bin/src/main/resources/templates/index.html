@@ -12,22 +12,17 @@
 	<form th:action="@{/insert}" method="post">
 	
 		<label><input type="checkbox" value="早稲田大学" id="waseda">早稲田大学</label>
-			<div id="parentM">
+		<div id="parentM">
 				<!-- ここにinputが追加される -->
-			</div>
-		<label for="oneMonday" id="one"><input type="checkbox" value="すべて" class="waseda3" id="oneMonday">すべて</label>
+		</div>
 		<input type="button" value="追加" id="addMon"><br>
 
-		
 		<label><input type="checkbox" value="慶應大学" id="keio">慶應大学</label>
 			<div id="parentTue">
 				<!-- ここにinputが追加される -->
 			</div>
-		<label for="oneTuesday" id="two"><input type="checkbox" value="すべて" class="keio3" id="oneTuesday">すべて</label>
 		<input type="button" value="追加" id="addTue">
 
-		<br>
-		
 		<input type="submit" value="送信" />
 
 	</form>

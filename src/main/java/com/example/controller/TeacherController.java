@@ -26,6 +26,7 @@ public class TeacherController {
 				teacher.setUniversity(teacher.getUniversity());
 				teacher.setName(teacher.getName());
 				teacher.setSubject(teacher.getSubject());
+				teacher.setOne(teacher.getOne());
 				teacherRepository.insert(teacher);
 				teacherRepository.delete(teacher);
 		}
