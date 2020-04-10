@@ -43,8 +43,6 @@ $(function(){
         //mapにセットしている
 		map.set(countWase, 'countWase');
 		
-		console.log("1番目早稲田" + countWase);
-		
 		var waseda = document.getElementById("waseda");
 		waseda.setAttribute("name","teacherList[" + countWase + "].university");
 		
@@ -152,9 +150,6 @@ $(function(){
 			subject.setAttribute("placeholder","科目名");
 			subject.setAttribute("name","teacherList[" + countWase + "].subject");
 			
-			
-			var oneMonday = document.getElementById("oneMonday");
-			oneMonday.setAttribute("name","teacherList[" + countWase + "].one");
 			
 			childM.appendChild(name);
 			childM.appendChild(subject);
@@ -388,9 +383,6 @@ $(function(){
 				subject.setAttribute("type","text");
 				subject.setAttribute("placeholder","科目名");
 				subject.setAttribute("name","teacherList[" + countKei + "].subject");
-				
-				var oneTuesday = document.getElementById("oneTuesday");
-				oneTuesday.setAttribute("name","teacherList[" + countKei + "].one");
 				
 				childTue.appendChild(name);
 				childTue.appendChild(subject);
