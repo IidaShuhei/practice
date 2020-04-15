@@ -6,6 +6,7 @@
 </head>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script th:src="@{/js/waseda.js}"></script>
+<script th:src="@{/js/university.js}"></script>
 <!-- <script th:src="@{/js/keio.js}"></script> -->
 <body>
 	
@@ -13,15 +14,30 @@
 	
 		<label><input type="checkbox" value="早稲田大学" id="waseda">早稲田大学</label>
 		<div id="parentM">
-				<!-- ここにinputが追加される -->
+<!-- 				ここにinputが追加される -->
 		</div>
 		<input type="button" value="追加" id="addMon"><br>
 
 		<label><input type="checkbox" value="慶應大学" id="keio">慶應大学</label>
 			<div id="parentTue">
-				<!-- ここにinputが追加される -->
+<!-- 				ここにinputが追加される -->
 			</div>
 		<input type="button" value="追加" id="addTue">
+
+		
+		<hr>
+		<br><br><br>
+		<div id="university">
+			<div class="item" data-formno="0">
+				<input type="text" name="teacherList[0].university" class="daigaku" placeholder="大学">
+				<input type="text" name="teacherList[0].name" class="teacher" placeholder="教授">
+				<input type="text" name="teacherList[0].subject" class="subject" placeholder="科目">
+				<input type="button" value="削除" class="del">
+			</div>
+<!-- 				ここにdivとinputが追加される -->
+		</div>
+		<input type="button" value="追加" id="add">
+
 
 		<input type="submit" value="送信" />
 
