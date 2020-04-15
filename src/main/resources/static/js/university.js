@@ -1,6 +1,7 @@
 $(function() {
 	var num1;
-	//追加
+	
+	//クローンする
 	var copy = function(i) {
 		//クローンを変数に格納
 		clonecode = $('.item:last').clone(true);
@@ -28,40 +29,46 @@ $(function() {
 		clonecode.insertAfter($('.item:last'));
 	};
 
-	var add = function() {
+	//追加
+	$('#add').click(function() {
 		copy();
 		clonecode.find('input.daigaku').val('');
 		clonecode.find('input.teacher').val('');
 		clonecode.find('input.subject').val('');
-	};
-
-	$('#add').click(function() {
-		add();
+	});	
 
 	//削除
 	$('.del').click(function() {
 		//クリックされた削除ボタンの親要素を削除
-		$(this).parents(".item").remove();
+		var len = document.getElementsByClassName("item");
+		if(len.length > 1) {
+			$(this).parents(".item").remove();
+		} else {
+			alert('消せません');
+		}
 
 		var count = 0;
+		
 		//番号振り直し
 		$('.item').each(function(){
+			
+			//data属性の数字
+			$(this).attr('data-formno',count);
 		
-		//input質問タイトル番号振り直し
-		var name = $('input.daigaku',this).attr('name');
-		name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
-		$('input.daigaku',this).attr('name',name);
-		
-		var name = $('input.teacher',this).attr('name');
-		name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
-		$('input.teacher',this).attr('name',name);
-		
-		var name = $('input.subject',this).attr('name');
-		name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
-		$('input.subject',this).attr('name',name);
-
-		count += 1;
+			//input質問タイトル番号振り直し
+			var name = $('input.daigaku',this).attr('name');
+			name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
+			$('input.daigaku',this).attr('name',name);
+			
+			var name = $('input.teacher',this).attr('name');
+			name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
+			$('input.teacher',this).attr('name',name);
+			
+			var name = $('input.subject',this).attr('name');
+			name = name.replace(/teacherList\[[0-9]{1,2}/g,'teacherList[' + count);
+			$('input.subject',this).attr('name',name);
+	
+			count += 1;
 		});
-	});	
-});
+	});
 });
